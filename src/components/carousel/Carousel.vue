@@ -1,6 +1,13 @@
 <template>
   <div v-if="articleStore.getFeaturedArticles">
-    <Carousel :items-to-show="1" :wrap-around="true" class="p-top">
+    <Carousel
+      :items-to-show="1"
+      :wrap-around="true"
+      :autoplay="2000"
+      :snap-align="center"
+      :mouse-drag="false"
+      class="p-top"
+    >
       <Slide v-for="featured in articleStore.getFeaturedArticles" :key="featured.id">
         <div class="slider-bck" :style="{ background: `url(${featured.image})` }">
           <div class="slide-content">
@@ -14,6 +21,7 @@
 
       <template #addons>
         <Pagination />
+        <Navigation />
       </template>
     </Carousel>
   </div>
