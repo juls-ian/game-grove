@@ -26,5 +26,6 @@ export const isAuthenticated = () => {
 export const isLoggedIn = () => {
   let user = AUTH.currentUser;
   if (user) return '/';
+  console.log(user);
   return true;
 };

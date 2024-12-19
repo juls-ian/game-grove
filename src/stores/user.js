@@ -76,7 +76,7 @@ export const useUserStore = defineStore('user', {
         router.push({ name: 'dashboard' });
       } catch (error) {
         $toast.error(error.message);
-        throw new Error(authErrors(error.code));
+        // throw new Error(authErrors(error.code));
       } finally {
         this.loading = false;
       }

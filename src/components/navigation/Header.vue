@@ -1,6 +1,5 @@
 <script setup>
   import { useUserStore } from '@/stores/user';
-
   const userStore = useUserStore();
 </script>
 
@@ -18,7 +17,7 @@
             <li>
               <RouterLink :to="{ name: 'dashboard' }">Dashboard</RouterLink>
             </li>
-            <li @click="userStore.logout()"><span>Logout</span></li>
+            <li @click="userStore.logout()" v-if="userStore.auth"><span>Logout</span></li>
           </span>
         </ul>
       </div>
